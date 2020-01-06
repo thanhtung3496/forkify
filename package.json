@@ -1,21 +1,15 @@
 {
   "name": "forkify",
   "version": "1.0.0",
-  "description": "forkify project",
+  "description": "Project Forkify",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thanhtung3496/forkify.git"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
   },
   "author": "Tung Le",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thanhtung3496/forkify/issues"
-  },
-  "homepage": "https://github.com/thanhtung3496/forkify#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -26,6 +20,9 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0"
+    "axios": "^0.19.0",
+    "babel-polyfill": "^6.26.0",
+    "fractional": "^1.0.0",
+    "uniqid": "^5.2.0"
   }
 }

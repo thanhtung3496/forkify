@@ -6,7 +6,7 @@ export const clearInput = () => {elements.searchInput.value = '';};
 
 export const clearResults = () => {elements.searchResList.innerHTML = '';};
 
-const limitRecipeTitle = (title, limit = 17) => {
+const limitRecipeTitle = (title, limit = 20) => {
     if(title.length > limit){
         const newTitle = [];
         title.split(' ').reduce((acc, cur) => {

@@ -18,7 +18,7 @@ const state = {};
 const controlSearch = async () => {
     //1. get the query from the view
     const query = searchView.getInput();
-    console.log(query);
+    //console.log(query);
     
     if (query) { 
         //2. new search object and add to the state
@@ -48,6 +48,8 @@ elements.searchForm.addEventListener('submit', e => {
     controlSearch();
 });
 
+
+
 elements.searchResPages.addEventListener('click', e => {
     const btn = e.target.closest('.btn-inline');
     if(btn){
@@ -66,16 +68,18 @@ console.log(test);*/
 
 const controlRecipe = async () => {
     const id = window.location.hash.replace('#','');
-    console.log(id);
+    //console.log(id);
     if (id){
         // Prepare UI for changes
         
         // Create new recipe object 
         state.recipe = new Recipe(`${id}`);
         
+        
         try {
-            // Get recipe data
+            // Get recipe data and parse ingredient
             await state.recipe.getRecipe();
+            state.recipe.parseIngredient();
         } catch (err){
             alert('Error processing recipe');
             console.log(err);
